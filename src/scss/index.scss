@@ -1,4 +1,6 @@
-
+/*==============================================================================================================================
+disable default style
+================================================================================================================================*/
 a {
     text-decoration: none;
 }
@@ -16,64 +18,12 @@ p {
     display: flex;
     flex-direction: column;
 }
-
-#logo-uni {
-    height: 80px;
-    width: 45px;
-    background-image: url('/assets/img/header/logo_UL.png');
-    background-repeat: no-repeat;
-    
-}
-#logo-insa {
-    height: 80px;
-    width: 45px;
-    background-image: url('/assets/img/header/logo-insa.png');
-    background-repeat: no-repeat;
-}
-.separator {
-    height: 50px;
-border: #ffffff 1px solid;
-margin: 30px;
+h1 {
+    color: #ffffff;
+    font-size: 50px;
 }
 
-.test {
-    
-}
 
-.parralelogramm-1 {
-    justify-content: space-around;
-    align-items: center;
-    height: 200px;
-    background-image: url('/assets/img/header/rectangle.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.parralelogramm-1::before {
-    align-self: flex-start;
-    position: absolute;
-    width: 320px;
-    left: 0px;
-    top: 90px;
-    border-style: solid;
-    border-width: 120px 0 0 300px;
-    border-color: transparent transparent transparent #ffffff;
-	content: "";
-	transform-origin: bottom right;
-}
-
-.parralelogramm-1::after {
-    align-self: flex-end;
-    position: absolute;
-    width: 0;
-    height: 0;
-    right: 8px;
-    border: 0 solid transparent;
-    border-right-width: 0px;
-    border-left-width: 291px;
-    border-bottom: 119px solid rgb(255, 61, 61);
-	content: "";
-}
 
 /*==============================================================================================================================
 Breadcrumbs
@@ -99,10 +49,121 @@ main {
     justify-content: space-around;
 }
 #main-section {
-    width: 60vw;
+    width: 100%;
 }
 #main-aside {
-    width: 30vw;
+    flex-direction: column;
+    width: 100%;
+}
+
+.avatar {
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 180px;
+    width: 180px;
+    justify-content: center;
+}
+.aside-info {
+    width: 30%;
+}
+
+#main-aside header {
+    align-items: center
 }
 
 
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+
+        .aside-info {
+            width: 10vw
+        }
+        #main-aside {
+            flex-direction: column;
+        }
+
+        #main-aside section {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+body  {
+    width: 100vw;
+    @media screen and (min-width: 768px) {
+       
+
+        .parralelogramm-1 {
+            justify-content: space-around;
+            align-items: center;
+            height: 200px;
+            background-image: url('/assets/img/header/rectangle.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .parralelogramm-1::before {
+            align-self: flex-start;
+            position: absolute;
+            width: 320px;
+            left: 0px;
+            top: 90px;
+            border-style: solid;
+            border-width: 120px 0 0 300px;
+            border-color: transparent transparent transparent #ffffff;
+            content: "";
+            transform-origin: bottom right;
+        }
+        
+        .parralelogramm-1::after {
+            align-self: flex-end;
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: 8px;
+            border: 0 solid transparent;
+            border-right-width: 0px;
+            border-left-width: 291px;
+            border-bottom: 119px solid rgb(255, 61, 61);
+            content: "";
+        }
+
+    }
+}
+
+.parralelogramm-1  {
+    background-color: red;
+    width: 100vw;
+    justify-content: space-around;
+    @media screen and (min-width: 768px) {
+        #logo-uni {
+            height: 80px;
+            width: 45px;
+            background-image: url('/assets/img/header/logo_UL.png');
+            background-repeat: no-repeat;
+            
+        }
+        #logo-insa {
+            height: 80px;
+            width: 45px;
+            background-image: url('/assets/img/header/logo-insa.png');
+            background-repeat: no-repeat;
+        }
+        .separator {
+            height: 50px;
+        border: #ffffff 1px solid;
+        margin: 30px;
+        }
+        
+    
+        
+
+    }
+}
