@@ -10,6 +10,17 @@ ul {
 p {
     color: black;
 }
+li {
+    padding: 0 5px 0 5px;
+}
+h1 {
+    color: #ffffff;
+    font-size: 20px;
+}
+body {
+    margin: 0;
+}
+
 .container-row {
     display: flex;
     flex-direction: row
@@ -18,12 +29,62 @@ p {
     display: flex;
     flex-direction: column;
 }
-h1 {
-    color: #ffffff;
-    font-size: 50px;
+
+/*==============================================================================================================================
+Header
+================================================================================================================================*/
+.socials li>a {
+    color:white;
 }
 
+#logo-insa {
+  
+    background-image: url('/assets/img/header/logo-insa.png');
+    height: 35px;
+    width: 150px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
+#logo-uni {
+    height: 80px;
+    width: 45px;
+    background-image: url('/assets/img/header/logo_UL.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+
+.parralelogramm-1>:first-child {
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 35px;
+    margin-top: 10px;
+}
+
+.separator {
+    height: 50px;
+    border: #ffffff 1px solid;
+}
+
+.socials {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.socials li>a {
+    color:white;
+}
+
+#title {
+    width: 100%;
+    text-align: center;
+}
 
 /*==============================================================================================================================
 Breadcrumbs
@@ -45,12 +106,28 @@ Breadcrumbs
 .breadcrumbs li:last-child:after {
     content: '';
 }
+
+/*==============================================================================================================================
+main section
+================================================================================================================================*/
 main {
     justify-content: space-around;
 }
 #main-section {
     width: 100%;
 }
+
+.flag {
+    margin-top: 10px;
+}
+article {
+    
+    margin: 4px;
+}
+
+/*==============================================================================================================================
+Aside
+================================================================================================================================*/
 #main-aside {
     flex-direction: column;
     width: 100%;
@@ -65,14 +142,58 @@ main {
     justify-content: center;
 }
 .aside-info {
-    width: 30%;
+    width: 33%;
+    margin: 4px;
 }
 
 #main-aside header {
     align-items: center
 }
+#main-aside section {
+    align-items: center;
+}
 
+.asked-question {
+    background-image: url('/assets/img/logo-FAQ.png');
+    width: 54px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-color: red;
+    background-position: center;
+}
+/*==============================================================================================================================
+Footer
+================================================================================================================================*/
 
+.footer-logo {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(111, 108, 108);
+    background-image: url('/assets/img/Footer/logo-inst-carnot.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.footer-info {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(255, 0, 0);
+}
+
+.footer-info p {
+    color: #ffffff;
+}
+
+nav>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fa-heart {
+    color: #ffffff;
+    margin: 5px;
+}
 
 main {
     display: flex;
@@ -81,23 +202,64 @@ main {
     @media screen and (min-width: 768px) {
         display: flex;
         flex-direction: row;
+        aside {
+            width: 45%;
+        }
 
         .aside-info {
             width: 10vw
         }
         #main-aside {
             flex-direction: column;
+            width: 85%;
+            height: 90%;
+            -webkit-box-shadow: 10px 10px 43px -6px rgba(0,0,0,0.35);
+            -moz-box-shadow: 10px 10px 43px -6px rgba(0,0,0,0.35);
+            box-shadow: 10px 10px 43px -6px rgba(0,0,0,0.35);
         }
 
         #main-aside section {
             flex-direction: column;
             align-items: center;
         }
+
+        #main-section {
+            width: 55%;
+            display: flex;
+        }
+        .ui-tooltip {
+            background: #666;
+            color: white;
+            border: none;
+            padding: 0;
+            opacity: 1;
+        }
+        .ui-tooltip-content {
+            position: relative;
+            padding: 1em;
+        }
+        .ui-tooltip-content::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            display: block;
+            width: 0;
+        }
+        .left .ui-tooltip-content::after {
+            top: 18px;
+            right: -10px;
+            border-color: transparent #666;
+            border-width: 10px 0 10px 10px;
+        }
     }
 }
 body  {
     width: 100vw;
     @media screen and (min-width: 768px) {
+        h1 {
+            color: #ffffff;
+            font-size: 50px;
+        }
        
 
         .parralelogramm-1 {
@@ -113,11 +275,11 @@ body  {
             align-self: flex-start;
             position: absolute;
             width: 320px;
-            left: 0px;
+            left: 8px;
             top: 90px;
             border-style: solid;
             border-width: 120px 0 0 300px;
-            border-color: transparent transparent transparent #ffffff;
+            border-color: transparent transparent transparent #e5e5e5;
             content: "";
             transform-origin: bottom right;
         }
@@ -127,14 +289,15 @@ body  {
             position: absolute;
             width: 0;
             height: 0;
-            right: 8px;
+            right: -25px;
             border: 0 solid transparent;
             border-right-width: 0px;
-            border-left-width: 291px;
-            border-bottom: 119px solid rgb(255, 61, 61);
+            border-left-width: 335px;
+            border-bottom: 133px solid #ff0000;
             content: "";
         }
 
+       
     }
 }
 
@@ -142,28 +305,40 @@ body  {
     background-color: red;
     width: 100vw;
     justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
     @media screen and (min-width: 768px) {
         #logo-uni {
-            height: 80px;
-            width: 45px;
             background-image: url('/assets/img/header/logo_UL.png');
-            background-repeat: no-repeat;
-            
-        }
-        #logo-insa {
-            height: 80px;
+            height: 55px;
             width: 45px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        
+        }
+
+        #logo-insa {
+            height: 128px;
+            width: 190px;
             background-image: url('/assets/img/header/logo-insa.png');
             background-repeat: no-repeat;
+            background-size: contain;
+            
         }
         .separator {
             height: 50px;
-        border: #ffffff 1px solid;
-        margin: 30px;
+            border: #ffffff 1px solid;
+            margin: 0 30px;
         }
         
+       
     
         
 
     }
 }
+
+
+
+
+
