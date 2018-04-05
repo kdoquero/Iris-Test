@@ -6,9 +6,12 @@ a {
 }
 ul {
     list-style-type: none;
+    margin: 0;
 }
 p {
     color: black;
+    margin: 2px;
+
 }
 li {
     padding: 0 5px 0 5px;
@@ -20,6 +23,9 @@ h1 {
 body {
     margin: 0;
 }
+H6 {
+    margin: 0px;
+}
 
 .container-row {
     display: flex;
@@ -28,6 +34,7 @@ body {
 .container-column {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /*==============================================================================================================================
@@ -35,6 +42,9 @@ Header
 ================================================================================================================================*/
 .socials li>a {
     color:white;
+}
+h5 {
+    color: #ffffff;
 }
 
 #logo-insa {
@@ -125,6 +135,31 @@ article {
     margin: 4px;
 }
 
+table {
+    border-left: #ff0000 solid 3px;
+    padding-left: 20px;
+}
+table>:first-child>td {
+    
+}
+.table-color {
+    color: #666;
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    margin: 10px;
+}
+.paginator .fas {
+    color: white;
+}
+
+
 /*==============================================================================================================================
 Aside
 ================================================================================================================================*/
@@ -144,6 +179,7 @@ Aside
 .aside-info {
     width: 33%;
     margin: 4px;
+    text-align: center;
 }
 
 #main-aside header {
@@ -153,13 +189,49 @@ Aside
     align-items: center;
 }
 
+/*==============================================================================================================================
+Tooltip
+================================================================================================================================*/
+
 .asked-question {
-    background-image: url('/assets/img/logo-FAQ.png');
+    background-image: url('/assets/img/main/logo-FAQ.png');
     width: 54px;
     height: 50px;
     background-repeat: no-repeat;
     background-color: red;
     background-position: center;
+}
+
+.tooltip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(85, 17, 52);
+    color: white;
+    border: none;
+    padding: 0;
+    opacity: 1;
+    height: 40px;
+    padding: 10px;
+    position: absolute;
+    left: 85%;
+}
+.tooltip-content {
+    position: relative;
+    padding: 1em;
+}
+.tooltip-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    display: block;
+    width: 0;
+}
+.left .tooltip-content::after {
+    top: 18px;
+    right: -10px;
+    border-color: transparent rgb(85, 17, 52);
+    border-width: 10px 0 10px 10px;
 }
 /*==============================================================================================================================
 Footer
@@ -212,7 +284,7 @@ main {
         #main-aside {
             flex-direction: column;
             width: 85%;
-            height: 90%;
+            height: 65%;
             -webkit-box-shadow: 10px 10px 43px -6px rgba(0,0,0,0.35);
             -moz-box-shadow: 10px 10px 43px -6px rgba(0,0,0,0.35);
             box-shadow: 10px 10px 43px -6px rgba(0,0,0,0.35);
@@ -227,30 +299,7 @@ main {
             width: 55%;
             display: flex;
         }
-        .ui-tooltip {
-            background: #666;
-            color: white;
-            border: none;
-            padding: 0;
-            opacity: 1;
-        }
-        .ui-tooltip-content {
-            position: relative;
-            padding: 1em;
-        }
-        .ui-tooltip-content::after {
-            content: '';
-            position: absolute;
-            border-style: solid;
-            display: block;
-            width: 0;
-        }
-        .left .ui-tooltip-content::after {
-            top: 18px;
-            right: -10px;
-            border-color: transparent #666;
-            border-width: 10px 0 10px 10px;
-        }
+        
     }
 }
 body  {
@@ -275,8 +324,8 @@ body  {
             align-self: flex-start;
             position: absolute;
             width: 320px;
-            left: 8px;
-            top: 90px;
+            left: 0px;
+            top: 80px;
             border-style: solid;
             border-width: 120px 0 0 300px;
             border-color: transparent transparent transparent #e5e5e5;
@@ -289,12 +338,61 @@ body  {
             position: absolute;
             width: 0;
             height: 0;
-            right: -25px;
+            right: -16px;
+            top:67px;
             border: 0 solid transparent;
             border-right-width: 0px;
             border-left-width: 335px;
             border-bottom: 133px solid #ff0000;
             content: "";
+        }
+        .parralelogramm-1>:first-child {
+            width: 27%;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 35px;
+            margin-top: 10px;
+            left: 25px;
+            position: absolute;
+            top: -25px;
+        }
+
+        .footer-logo {
+            display: none;
+        }
+        .footer-info {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .footer-info::before {
+            position: absolute;
+            width: 201px;
+            left: 0%;
+            height: inherit;
+            /* bottom: -243px; */
+            border-style: solid;
+            border-width: 150px 0px 0px 170px;
+            border-color: transparent transparent transparent #f5f5f5;
+            content: "";
+            transform-origin: bottom right;
+            box-sizing: border-box;
+
+        }
+        .footer-info::after {
+            position: absolute;
+            width: 204px;
+            right: 0%;
+            height: inherit;
+            border-style: solid;
+            border-width: 150px 0 0 249px;
+            border-color: #49545a #49545a #49545a transparent;
+            content: "";
+            margin: 0;
+            display: none;
+
         }
 
        
@@ -318,7 +416,7 @@ body  {
         }
 
         #logo-insa {
-            height: 128px;
+            height: 45px;
             width: 190px;
             background-image: url('/assets/img/header/logo-insa.png');
             background-repeat: no-repeat;
@@ -331,6 +429,17 @@ body  {
             margin: 0 30px;
         }
         
+        .socials {
+            position: absolute;
+            display: flex;
+            align-self: flex-start;
+            align-items: center;
+            width: 210px;
+            justify-content: center;
+            /* right: -17%; */
+            left: 75%;
+            top: 30px;
+        }
        
     
         
